@@ -1,0 +1,159 @@
+{
+  "Name": "Sample.TransferFileBOMs",
+  "FlcWorkspace": "Items",
+  "VaultType": "File",
+  "FlcUnique": "Number",
+  "VaultUnique": "Part Number",
+  "Settings": [
+    {
+      "Name": "Upload File Attachments",
+      "Type": "Boolean",
+      "Value": true,
+      "IsSystem": true
+    },
+    {
+      "Name": "Upload Parent Drawing Attachments",
+      "Type": "Boolean",
+      "Value": true,
+      "IsSystem": true
+    },
+    {
+      "Name": "BOM-Source Field",
+      "Type": "FLC BOM Field",
+      "Value": "Source",
+      "IsSystem": true
+    },
+    {
+      "Name": "BOM-Source Value",
+      "Type": "Text",
+      "Value": "Vault",
+      "IsSystem": true
+    }
+  ],
+  "Mappings": [
+    {
+      "Name": "Vault File -> FLC Item",
+      "FlcType": "Item Field",
+      "VaultType": "File",
+      "FieldMappings": [
+        {
+          "Flc": "Number",
+          "Vault": "Part Number",
+          "Function": null
+        },
+        {
+          "Flc": "Title",
+          "Vault": "Title",
+          "Function": null
+        },
+        {
+          "Flc": "Description",
+          "Vault": "Description",
+          "Function": null
+        },
+        {
+          "Flc": "Image",
+          "Vault": "Thumbnail",
+          "Function": null
+        },
+        {
+          "Flc": "Make or Buy",
+          "Vault": "Make or Buy",
+          "Function": null
+        },
+        {
+          "Flc": "Material",
+          "Vault": "Material",
+          "Function": null
+        },
+        {
+          "Flc": "Responsible Designer",
+          "Vault": "Latest Approver",
+          "Function": null
+        },
+        {
+          "Flc": "Spare / Wear Part",
+          "Vault": "Spare-Wear Part",
+          "Function": null
+        },
+        {
+          "Flc": "PDM Category",
+          "Vault": "Category Name",
+          "Function": null
+        },
+        {
+          "Flc": "PDM Last Modification Date",
+          "Vault": "Date Modified",
+          "Function": null
+        },
+        {
+          "Flc": "PDM Revision Notes",
+          "Vault": "Comment",
+          "Function": null
+        },
+        {
+          "Flc": "PDM_STATUS_NAME",
+          "Vault": "State",
+          "Function": null
+        },
+        {
+          "Flc": "PDM_ITEM_REVISION",
+          "Vault": "Revision",
+          "Function": null
+        },
+        {
+          "Flc": "PDM_MASS",
+          "Vault": "Mass",
+          "Function": null
+        },
+        {
+          "Flc": "PDM_SIZE",
+          "Vault": "Bounding Size",
+          "Function": null
+        },
+        {
+          "Flc": "PDM_KEY_PARAMETERS",
+          "Vault": "Key Parameters",
+          "Function": null
+        },
+        {
+          "Flc": "PDM_ITEM_ID",
+          "Vault": null,
+          "Function": "GetEntityId"
+        },
+        {
+          "Flc": "PDM_MASTER_ID",
+          "Vault": null,
+          "Function": "GetEntityMasterId"
+        },
+        {
+          "Flc": "PDM_OBJECT_ID",
+          "Vault": null,
+          "Function": "GetObjectId"
+        },
+        {
+          "Flc": "PDM_VAULT_NAME",
+          "Vault": null,
+          "Function": "GetVaultName"
+        },
+        {
+          "Flc": "PDM Location",
+          "Vault": "Folder Path",
+          "Function": null
+        },
+        {
+          "Flc": "Primary File Name",
+          "Vault": "Name",
+          "Function": null
+        },
+        {
+          "Flc": "Primary File Revision / Version",
+          "Vault": "Revision",
+          "Function": null
+        }
+      ],
+      "IsSystem": true
+    }
+  ],
+  "IsSystem": true
+}

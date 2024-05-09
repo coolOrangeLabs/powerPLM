@@ -1,0 +1,298 @@
+{
+  "Name": "Sample.TransferItemBOMs",
+  "FlcWorkspace": "Vault Items and BOMs",
+  "VaultType": "Item",
+  "FlcUnique": "Number",
+  "VaultUnique": "Number",
+  "Settings": [
+    {
+      "Name": "Upload Item Attachments",
+      "Type": "Boolean",
+      "Value": true,
+      "IsSystem": true
+    },
+    {
+      "Name": "Upload Composition Attachments",
+      "Type": "Boolean",
+      "Value": true,
+      "IsSystem": true
+    },
+    {
+      "Name": "Upload Design Document Attachments",
+      "Type": "Boolean",
+      "Value": true,
+      "IsSystem": true
+    },
+    {
+      "Name": "Upload Design Document DWGs",
+      "Type": "Boolean",
+      "Value": true,
+      "IsSystem": true
+    },
+    {
+      "Name": "Use RowOrder as BOM Position",
+      "Type": "Boolean",
+      "Value": true,
+      "IsSystem": true
+    },
+    {
+      "Name": "BOM-Source Field",
+      "Type": "FLC BOM Field",
+      "Value": "Source",
+      "IsSystem": true
+    },
+    {
+      "Name": "BOM-Source Value",
+      "Type": "Text",
+      "Value": "Vault",
+      "IsSystem": true
+    },
+    {
+      "Name": "Enable Grid Transfer",
+      "Type": "Boolean",
+      "Value": true,
+      "IsSystem": true
+    },
+    {
+      "Name": "Transfer Grid only if BOM is merged",
+      "Type": "Boolean",
+      "Value": false,
+      "IsSystem": true
+    }
+  ],
+  "Mappings": [
+    {
+      "Name": "Vault Item -> FLC Item",
+      "FlcType": "Item Field",
+      "VaultType": "Item",
+      "FieldMappings": [
+        {
+          "Flc": "Number",
+          "Vault": "Number",
+          "Function": null
+        },
+        {
+          "Flc": "Title",
+          "Vault": "Title (Item,CO)",
+          "Function": null
+        },
+        {
+          "Flc": "Description",
+          "Vault": "Description (Item,CO)",
+          "Function": null
+        },
+        {
+          "Flc": "Units",
+          "Vault": "Units",
+          "Function": null
+        },
+        {
+          "Flc": "Thumbnail",
+          "Vault": "Thumbnail",
+          "Function": null
+        },
+        {
+          "Flc": "Category",
+          "Vault": "Category Name",
+          "Function": null
+        },
+        {
+          "Flc": "Last Updated By",
+          "Vault": "Last Updated By",
+          "Function": null
+        },
+        {
+          "Flc": "Last Updated",
+          "Vault": "Date Modified",
+          "Function": null
+        },
+        {
+          "Flc": "Vault Lifecycle Definition",
+          "Vault": "Lifecycle Definition",
+          "Function": null
+        },
+        {
+          "Flc": "Vault State",
+          "Vault": "State",
+          "Function": null
+        },
+        {
+          "Flc": "Vault Revision",
+          "Vault": "Revision",
+          "Function": null
+        },
+        {
+          "Flc": "Dimensions/Size",
+          "Vault": "Dimensions/Size",
+          "Function": null
+        },
+        {
+          "Flc": "Mass",
+          "Vault": "Mass",
+          "Function": null
+        },
+        {
+          "Flc": "Material",
+          "Vault": "Material",
+          "Function": null
+        },
+        {
+          "Flc": "Semi-Finished",
+          "Vault": "Semi-finished",
+          "Function": null
+        },
+        {
+          "Flc": "Spare-Wear Part",
+          "Vault": "Spare-Wear Part",
+          "Function": null
+        },
+        {
+          "Flc": "Stock Number",
+          "Vault": "Stock Number",
+          "Function": null
+        },
+        {
+          "Flc": "Vault Client Link",
+          "Vault": null,
+          "Function": "GetVaultThickClientLink"
+        },
+        {
+          "Flc": "Vault Thin Client Link",
+          "Vault": null,
+          "Function": "GetVaultThinClientLink"
+        }
+      ],
+      "IsSystem": true
+    },
+    {
+      "Name": "Vault primary Item-File Link -> FLC Item",
+      "FlcType": "Item Field",
+      "VaultType": "File",
+      "FieldMappings": [
+        {
+          "Flc": "File Name",
+          "Vault": "Name",
+          "Function": null
+        },
+        {
+          "Flc": "Folder",
+          "Vault": "Folder Path",
+          "Function": null
+        },
+        {
+          "Flc": "Project",
+          "Vault": "Project",
+          "Function": null
+        },
+        {
+          "Flc": "File Revision",
+          "Vault": "Revision",
+          "Function": null
+        },
+        {
+          "Flc": "File Version",
+          "Vault": "Version",
+          "Function": null
+        },
+        {
+          "Flc": "Provider",
+          "Vault": "Provider",
+          "Function": null
+        },
+        {
+          "Flc": "File Category",
+          "Vault": "Category Name (Historical)",
+          "Function": null
+        },
+        {
+          "Flc": "File State",
+          "Vault": "State (Historical)",
+          "Function": null
+        }
+      ],
+      "IsSystem": true
+    },
+    {
+      "Name": "Vault BOM -> FLC BOM",
+      "FlcType": "BOM Field",
+      "VaultType": "Bill of Materials",
+      "FieldMappings": [
+      ],
+      "IsSystem": true
+    },
+    {
+      "Name": "Vault BOM -> FLC Grid",
+      "FlcType": "Grid Field",
+      "VaultType": "Bill of Materials",
+      "FieldMappings": [
+        {
+          "Flc": "Row Order",
+          "Vault": "Bom_RowOrder",
+          "Function": null
+        },
+        {
+          "Flc": "Pos Nr",
+          "Vault": null,
+          "Function": "GetItemPositionNumber"
+        },
+        {
+          "Flc": "Number",
+          "Vault": "Number",
+          "Function": null
+        },
+        {
+          "Flc": "Quantity (Numeric Value)",
+          "Vault": "Bom_Quantity",
+          "Function": null
+        },
+        {
+          "Flc": "Item Qty",
+          "Vault": "Bom_InstCount",
+          "Function": null
+        },
+        {
+          "Flc": "Unit Qty (Numeric Value)",
+          "Vault": "Bom_UnitSize",
+          "Function": null
+        },
+        {
+          "Flc": "Units",
+          "Vault": "Bom_Unit",
+          "Function": null
+        },
+        {
+          "Flc": "Title",
+          "Vault": "Title (Item,CO)",
+          "Function": null
+        },
+        {
+          "Flc": "Revision",
+          "Vault": "Revision",
+          "Function": null
+        },
+        {
+          "Flc": "Semi finished BOM position",
+          "Vault": "Bom_Semi-finished (BOM Row)",
+          "Function": null
+        },
+        {
+          "Flc": "Stock number BOM position",
+          "Vault": "Bom_Stock Number (BOM Row)",
+          "Function": null
+        },
+        {
+          "Flc": "Diameter / Thickness",
+          "Vault": "Bom_Diam./Thickn. (BOM Row)",
+          "Function": null
+        },
+        {
+          "Flc": "Length / Sheet Cut",
+          "Vault": "Bom_Length (Cut, BOM Row)",
+          "Function": null
+        }
+      ],
+      "IsSystem": true
+    }
+  ],
+  "IsSystem": true
+}
