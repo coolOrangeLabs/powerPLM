@@ -19,14 +19,6 @@ function GetVaultServer($Entity) {
     return $hostname
 }
 
-function GetEntityId($Entity) {
-    return $Entity.Id
-}
-
-function GetEntityMasterId($Entity) {
-    return $Entity.MasterId
-}
-
 function GetVaultPersistentId($Entity) {
     $id = $vault.KnowledgeVaultService.GetPersistentIds($Entity._EntityTypeID, @($Entity.Id), [Autodesk.Connectivity.WebServices.EntPersistOpt]::Latest) | Select-Object -First 1
     return $id
@@ -54,9 +46,9 @@ function GetVaultThinClientLink($Entity) {
 
 function GetObjectId($Entity) {
     if ($Entity._EntityTypeID -eq "ITEM") {
-        $objectId = [System.Web.HttpUtility]::UrlEncode($Entity._Number)
+        $objectId = $Entity._Number
     } elseif ($Entity._EntityTypeID -eq "FILE") {
-        $objectId = [System.Web.HttpUtility]::UrlEncode($Entity._FullPath)
+        $objectId = $Entity._FullPath
     } else {
         return ""
     }

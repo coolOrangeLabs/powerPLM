@@ -118,13 +118,13 @@
         },
         {
           "Flc": "PDM_ITEM_ID",
-          "Vault": null,
-          "Function": "GetEntityId"
+          "Vault":  "Id",
+          "Function": null
         },
         {
           "Flc": "PDM_MASTER_ID",
-          "Vault": null,
-          "Function": "GetEntityMasterId"
+          "Vault": "MasterId",
+          "Function": null
         },
         {
           "Flc": "PDM_OBJECT_ID",
