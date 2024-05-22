@@ -9,43 +9,43 @@
       "Name": "Upload Item Attachments",
       "Type": "Boolean",
       "Value": true,
-      "IsSystem": false
+      "IsSystem": true
     },
     {
       "Name": "Upload Composition Attachments",
       "Type": "Boolean",
       "Value": true,
-      "IsSystem": false
+      "IsSystem": true
     },
     {
       "Name": "Upload Design Document Attachments",
       "Type": "Boolean",
       "Value": true,
-      "IsSystem": false
+      "IsSystem": true
     },
     {
       "Name": "Upload Design Document DWGs",
       "Type": "Boolean",
       "Value": true,
-      "IsSystem": false
+      "IsSystem": true
     },
     {
       "Name": "BOM-Source Field",
       "Type": "FLC BOM Field",
       "Value": "Source",
-      "IsSystem": false
+      "IsSystem": true
     },
     {
       "Name": "BOM-Source Value",
       "Type": "Text",
       "Value": "Vault",
-      "IsSystem": false
+      "IsSystem": true
     },
     {
       "Name": "Enable Grid Transfer",
       "Type": "Boolean",
       "Value": false,
-      "IsSystem": false
+      "IsSystem": true
     }
   ],
   "Mappings": [
@@ -141,18 +141,18 @@
         },
         {
           "Flc": "PDM_ITEM_ID",
-          "Vault": null,
-          "Function": "GetEntityId"
+          "Vault": "Id",
+          "Function": null
         },
         {
           "Flc": "PDM_MASTER_ID",
-          "Vault": null,
-          "Function": "GetEntityMasterId"
+          "Vault": "MasterId",
+          "Function": null
         },
         {
           "Flc": "PDM_OBJECT_ID",
-          "Vault": null,
-          "Function": "GetObjectId"
+          "Vault": "Number",
+          "Function": null
         },
         {
           "Flc": "PDM_VAULT_NAME",
@@ -160,7 +160,7 @@
           "Function": "GetVaultName"
         }
       ],
-      "IsSystem": false
+      "IsSystem": true
     },
     {
       "Name": "Vault BOM -> FLC BOM",
@@ -178,7 +178,7 @@
           "Function": null
         }
       ],
-      "IsSystem": false
+      "IsSystem": true
     },
     {
       "Name": "Vault primary Item-File Link -> FLC Item",
@@ -201,8 +201,8 @@
           "Function": null
         }
       ],
-      "IsSystem": false
+      "IsSystem": true
     }
   ],
-  "IsSystem": false
+  "IsSystem": true
 }

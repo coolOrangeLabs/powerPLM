@@ -170,15 +170,8 @@ Write-Host "Transfering BOM..."
 $bomRows = @()
 
 foreach ($mergedBomRow in $mergedBomRows) {
-    if ($workflow.Settings.'Use RowOrder as BOM Position' -eq $true) {
-        $positionNumber = $mergedBomRow.Bom_RowOrder
-    }
-    else {
-        $positionNumber = (GetItemPositionNumber -Entity $mergedBomRow)
-    }
-
     $properties = @{
-        "Bom_PositionNumber"   = $positionNumber
+        "Bom_PositionNumber"   = (GetItemPositionNumber -Entity $mergedBomRow)
         "Workspace"            = $mergedBomRow.FlcItem.Workspace
         "Id"                   = $mergedBomRow.FlcItem.Id
         "Bom_Quantity"         = $mergedBomRow.Bom_InstCount
@@ -203,32 +196,6 @@ foreach ($manualBomRow in $manualBomRows) {
 
 $flcBom = $item.FlcItem | Update-FLCBOM -Rows $bomRows -ErrorAction Stop
 #endregion Transfer BOM
-
-
-#region Part List Details Grid
-if ($workflow.Settings.'Enable Grid Transfer') {
-    Write-Host "Transfering Part List Details..."
-
-    $transferGrid = $true
-    if ($workflow.Settings.'Transfer Grid only if BOM is merged') {
-        $transferGrid = ($mergedBomRows.Count -ne $entityBomRows.Count)
-    }
-
-    if ($transferGrid) {
-        $rows = @()
-        foreach ($entityBomRow in $entityBomRows) {
-            $properties = GetFlcProperties -MappingName "Vault BOM -> FLC Grid" -Entity $entityBomRow
-            $rows += $properties
-        }
-
-        $gridIdField = "Pos Nr"
-        $item.FlcItem | Update-FLCGrid -Rows $rows -UniqueField $gridIdField
-    }
-    else {
-        Write-Host "Part List Details data is identical to BOM data and won't be transferred!"
-    }
-}
-#endregion Part List Details Grid
 
 CleanupWorkingDirectory -Folder $downloadDirectory
 
