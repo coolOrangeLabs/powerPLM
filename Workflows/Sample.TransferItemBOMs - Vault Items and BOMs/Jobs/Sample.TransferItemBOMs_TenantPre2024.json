@@ -1,5 +1,5 @@
 {
-  "Name": "Sample.TransferItemBOMs",
+  "Name": "Sample.TransferItemBOMs_TenantPre2024",
   "FlcWorkspace": "Vault Items and BOMs",
   "VaultType": "Item",
   "FlcUnique": "Number",
