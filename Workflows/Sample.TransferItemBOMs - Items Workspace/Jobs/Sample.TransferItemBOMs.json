@@ -40,12 +40,6 @@
       "Type": "Text",
       "Value": "Vault",
       "IsSystem": true
-    },
-    {
-      "Name": "Enable Grid Transfer",
-      "Type": "Boolean",
-      "Value": false,
-      "IsSystem": true
     }
   ],
   "Mappings": [
